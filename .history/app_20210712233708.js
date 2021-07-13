@@ -1,5 +1,5 @@
 /* Import libraries */
-import * as THREE from './build/THREE/js/three.module.js'
+import * as THREE from 'https://cdn.skypack.dev/three@<version>'
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
