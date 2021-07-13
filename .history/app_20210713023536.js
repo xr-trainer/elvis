@@ -38,10 +38,9 @@ document.body.appendChild(VRButton.createButton(renderer));
 renderer.xr.enabled = true;
 
 function animate(){
+    requestAnimationFrame(animate);
     controls.update();
-    renderer.setAnimationLoop(function(){
-        renderer.render(scene, camera);
-    });
+    renderer.render(scene, camera);
 }
 
 // if(WebGLCheck.isWebGLAvailable()){
