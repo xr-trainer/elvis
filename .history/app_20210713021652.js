@@ -1,7 +1,7 @@
 /* Import libraries */
 import * as THREE from './build/THREE/three.module.js'
 // import WebGLCheck from './build/THREE/jsm/WebGL.js'
-import { OrbitControls } from './build/THREE/jsm/controls/OrbitControls.js';
+
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -9,10 +9,6 @@ const camera = new THREE.PerspectiveCamera(
     window.innerWidth / window.innerHeight,
     0.1,
     1000
-);
-const controls = new OrbitControls(
-    camera,
-    renderer.domElement
 );
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(
@@ -29,11 +25,13 @@ const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
 camera.position.z = 5;
-controls.update();
 
 function animate(){
     requestAnimationFrame(animate);
-    controls.update();
+
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+
     renderer.render(scene, camera);
 }
 

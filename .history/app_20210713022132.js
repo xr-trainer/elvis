@@ -10,10 +10,6 @@ const camera = new THREE.PerspectiveCamera(
     0.1,
     1000
 );
-const controls = new OrbitControls(
-    camera,
-    renderer.domElement
-);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(
     window.innerWidth,
@@ -29,11 +25,13 @@ const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
 camera.position.z = 5;
-controls.update();
 
 function animate(){
     requestAnimationFrame(animate);
-    controls.update();
+
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+
     renderer.render(scene, camera);
 }
 
