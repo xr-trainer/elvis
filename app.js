@@ -1,6 +1,6 @@
 /* Import libraries */
 import * as THREE from './build/THREE/three.module.js'
-import WebGLCheck from './build/THREE/jsm/WebGL.js'
+// import WebGLCheck from './build/THREE/jsm/WebGL.js'
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -34,9 +34,9 @@ function animate(){
     renderer.render(scene, camera);
 }
 
-if(WebGLCheck.isWebGLAvailable()){
+// if(WebGLCheck.isWebGLAvailable()){
     animate();
-} else{
-    const warning = WEBGL.getWebGLErrorMessage();
-    document.getElementById('container').appendChild(warning);
-}
+// } else{
+//     const warning = WEBGL.getWebGLErrorMessage();
+//     document.getElementById('container').appendChild(warning);
+// }
