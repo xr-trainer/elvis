@@ -33,7 +33,7 @@ const material = new THREE.MeshBasicMaterial({
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
-// load3DModel('./models/gltf/next_prev_btn.glb');
+load3DModel('./models/gltf/next_prev_btn.glb');
 
 camera.position.z = 5;
 controls.update();
